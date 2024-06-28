@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainPage"
+    android:background="@color/teal_700">
+
+    <EditText
+        android:id="@+id/dailyWeightText"
+        android:layout_width="154dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Enter Daily Weight"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/goalWeightText"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/goalWeightText"
+        android:layout_width="154dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:hint="Enter Goal Weight"
+        app:layout_constraintStart_toEndOf="@id/dailyWeightText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp" />
+
+    <Button
+        android:id="@+id/dailyWeightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintTop_toBottomOf="@id/dailyWeightText"
+        app:layout_constraintStart_toStartOf="@id/dailyWeightText"
+        app:layout_constraintEnd_toEndOf="@id/dailyWeightText"/>
+
+    <Button
+        android:id="@+id/goalWeightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="@id/goalWeightText"
+        app:layout_constraintStart_toStartOf="@id/goalWeightText"
+        app:layout_constraintTop_toBottomOf="@id/goalWeightText" />
+
+    <TextView
+        android:id="@+id/historyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="History"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dailyWeightButton" />
+
+    <ListView
+        android:id="@+id/weightHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/historyView"
+        app:layout_constraintVertical_bias="0.034"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/goalWeightDisplay"
+        android:layout_width="87dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/historyView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goalWeightButton"
+        android:textSize="20sp"
+        android:textAlignment="center" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
